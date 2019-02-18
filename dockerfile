@@ -6,10 +6,10 @@ ADD requirements.txt requirements.txt 
 WORKDIR src/mypy
  RUN pip3 install -r requirements.txt 
 
-ENTRYPOINT [ "python3" ]
+#WORKDIR src/mypy/app/main
 
-CMD [ "app1.py" ]
 
-# Bundle app source
-CMD ./start_pr1.sh
+#ENTRYPOINT [ "python3" ]
+EXPOSE 5000
 
+CMD ["python3", "app/main/app.py" ]
